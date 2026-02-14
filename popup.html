@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Kagi Mail Alias</h1>
+      </header>
+
+      <div id="auth-error" class="hidden">
+        <p>Not logged in to Kagi Mail.</p>
+        <a href="https://kagimail.com" target="_blank" rel="noopener"
+          >Log in to Kagi Mail &rarr;</a
+        >
+      </div>
+
+      <div id="main">
+        <section id="quick-generate">
+          <button id="btn-random" type="button">Generate Random Alias</button>
+        </section>
+
+        <div id="result" class="hidden">
+          <span id="result-alias"></span>
+          <button id="btn-copy" type="button" title="Copy to clipboard">
+            Copy
+          </button>
+        </div>
+
+        <div id="error" class="hidden"></div>
+
+        <div class="divider"><span>or create custom</span></div>
+
+        <section id="custom-section">
+          <label for="custom-domain">Domain</label>
+          <div class="select-wrapper loading">
+            <select id="custom-domain" disabled>
+              <option>Loading domains…</option>
+            </select>
+          </div>
+
+          <label for="custom-name">Alias name</label>
+          <input
+            type="text"
+            id="custom-name"
+            placeholder="myalias"
+            autocomplete="off"
+          />
+
+          <label for="custom-description">Description (optional)</label>
+          <input
+            type="text"
+            id="custom-description"
+            placeholder=""
+            autocomplete="off"
+          />
+
+          <button id="btn-custom" type="button" disabled>Create Alias</button>
+        </section>
+
+        <section id="recent-section" class="hidden">
+          <div class="divider"><span>Recent</span></div>
+          <ul id="recent-list"></ul>
+        </section>
+      </div>
+
+      <div id="loading" class="hidden">
+        <div class="spinner"></div>
+      </div>
+    </div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
