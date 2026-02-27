@@ -1,0 +1,57 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "kagi-alias",
+  "title": "Kagi Mail Alias",
+  "description": "Create Kagi Mail email aliases",
+  "icon": "extension-icon.png",
+  "author": "shaarawi",
+  "categories": ["Productivity"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "generate-random-alias",
+      "title": "Generate Random Alias",
+      "description": "Generate a random Kagi Mail alias and copy to clipboard",
+      "mode": "no-view"
+    },
+    {
+      "name": "create-custom-alias",
+      "title": "Create Custom Alias",
+      "description": "Create a custom Kagi Mail alias with a name you choose",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "sessionCookie",
+      "type": "password",
+      "required": true,
+      "title": "Session Cookie",
+      "description": "Your kagimail.com Cookie header (e.g. auth=abc123...)."
+    },
+    {
+      "name": "domains",
+      "type": "textfield",
+      "required": false,
+      "title": "Domains",
+      "description": "Comma-separated list of domains for custom aliases.",
+      "default": "kagimail.com"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.83.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2",
+    "react": "^19.0.0"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "lint": "ray lint"
+  }
+}
